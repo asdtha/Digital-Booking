@@ -1,0 +1,467 @@
+.TitleFormAdmin {
+  padding-bottom: 23px;
+  color: #383b58;
+  padding-top: 44px;
+}
+
+.FormCreateProductAdmin {
+  display: flex;
+  flex-direction: column;
+  padding: 34px 25px 59px;
+  background-color: #fff;
+  border: 1px solid #dfe4ea;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  margin-bottom: 45px;
+}
+
+.FormCreateProductAdmin input:focus {
+  outline: 2px solid #383b5879;
+}
+
+.FormCreateProductAdmin input::placeholder,
+.FormCreateProductAdmin textarea::placeholder {
+  color: #bebebe;
+}
+
+.SelectsFormAdmin {
+  cursor: pointer;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABmJLR0QA/wD/AP+gvaeTAAAAoElEQVQokdWRLQ4CMRCF36wg0CNsWoLnFHiqMQ0JWcedGgxqbatbx0nIGrAsIMig+Wl3QcFn3/veiAH+l0mMw0/6clePAKAonRM3Ph1l9KaXGL2hiziUzomi0boFcUUMOw5umRNVdAtiWAKvG63bh0AFf00NdOXJQqeYKuZEejcgozfEsAA2AFZMqPaz+TZ79XlABX/u+4UXpnU9+Er8be7yhFS/1kMRlgAAAABJRU5ErkJggg==");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-origin: content-box;
+}
+
+.SelectsFormAdmin:focus {
+  outline: none !important;
+}
+
+.ContainerInputsFormAdmin {
+  display: flex;
+  gap: 33px;
+  margin-bottom: 48px;
+}
+
+.DescriptionProductFormAdmin {
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  border: none;
+  height: 120px;
+  padding: 15px;
+  color: #545776;
+  font-size: 12px;
+  resize: none;
+}
+
+.DescriptionProductFormAdmin:focus {
+  outline: 2px solid #383b5879;
+}
+
+.FormCreateProductAdmin label {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  gap: 8px;
+  color: #383b58;
+  position: relative;
+}
+
+.FormCreateProductAdmin label input {
+  width: 600px;
+  height: 40px;
+  padding: 0px 12px;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  border: none;
+  font-size: 12px;
+  color: #4f4f50;
+}
+
+.FormCreateProductAdmin h3 {
+  font-size: 20px;
+  color: #383b58;
+  padding: 37px 0px 13px;
+}
+
+.ContainerAtributesFormAdmin {
+  height: 100px;
+  background: #f9f9f9;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  padding: 0px 28px;
+  gap: 9px;
+  margin-bottom: 13px;
+}
+
+.ContainerInputsAtributes {
+  display: contents;
+}
+
+.ContainerAtributesFormAdmin .LabelAtributesFormAdmin {
+  flex-direction: row;
+  width: 100%;
+}
+
+.TitleAtributesFormAdmin {
+  background: #ffffff;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  height: 40px;
+  padding: 0px 12px;
+  display: flex;
+  align-items: center;
+  color: #bebebe;
+}
+
+.AtributesFormAdmin {
+  display: flex;
+  width: 100%;
+  gap: 12px;
+  align-items: center;
+}
+
+.AtributesFormAdmin .Label {
+  padding-bottom: 6px;
+}
+
+.NameAtribute {
+  width: 80%;
+}
+
+.IconAtribute {
+  width: 20%;
+}
+
+.IconAtribute .Icon {
+  justify-content: center;
+  font-size: 15px;
+}
+
+.CheckboxAtributesFormAdmin {
+  display: none;
+}
+
+.custom-radio-checkbox__show--checkbox {
+  background-color: #1dbeb4;
+}
+
+.custom-radio-checkbox__show--checkbox::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f067";
+}
+
+.custom-radio-checkbox__show {
+  width: 40px;
+  height: 40px;
+  font-size: 30px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.CheckboxAtributesFormAdmin:checked + .custom-radio-checkbox__show--checkbox {
+  background-color: #545776;
+}
+
+.CheckboxAtributesFormAdmin:checked
+  + .custom-radio-checkbox__show--checkbox::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f00d";
+}
+
+.ContainerPoliciesFormAdmin {
+  display: flex;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  justify-content: space-around;
+  padding: 20px 0px 30px;
+}
+
+.ContainerPoliciesFormAdmin h4 {
+  padding-bottom: 19px;
+  color: #545776;
+}
+
+.ContainerPoliciesFormAdmin label {
+  width: 367px;
+  color: #383b58;
+}
+
+.ContainerPoliciesFormAdmin textarea {
+  height: 200px;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  border: none;
+  padding: 15px;
+  font-size: 12px;
+  color: #4f4f50;
+  resize: none;
+}
+
+.ContainerPoliciesFormAdmin textarea:focus {
+  outline: 2px solid #383b5879;
+}
+
+.ContainerImagesFormAdmin {
+  height: 120px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 15px;
+}
+
+.ContainerImagesFormAdmin input {
+  width: 1125px;
+  height: 40px;
+  padding: 0px 12px;
+  border: none;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  color: #545776;
+  font-size: 12px;
+}
+
+.ButtonImagesFormAdmin {
+  width: 40px;
+  height: 40px;
+  font-size: 30px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.ButtonImagesPlus {
+  background-color: #1dbeb4;
+  transition: all 0.3s ease-out;
+}
+
+.ButtonImagesPlus::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f067";
+}
+
+.ButtonImagesClose {
+  background-color: #545776;
+}
+
+.ButtonImagesClose::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f00d";
+}
+
+.ButtonCreateProduct {
+  width: 365px;
+  height: 50px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
+  border-radius: 5px;
+  border: none;
+  background-color: #1dbeb4;
+  font-size: 16px;
+  color: #fff;
+  margin-top: 30px;
+  align-self: center;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+
+.DropdownFormAdmin {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  width: 600px;
+  z-index: 1;
+  top: 63px;
+  font-weight: 700;
+  margin-top: 3px;
+  padding: 0px 0px 10px;
+  border-radius: 0px 0px 6px 6px;
+  box-shadow: 0px 5px 9px 0px #383b58;
+}
+
+.DropdownFormAdmin p {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  width: 560px;
+  text-align: start;
+  border-bottom: 1px solid #1dbeb4;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  font-size: 12px;
+  padding-left: 15px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.Show {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-error-form-product {
+  color: #ff0000;
+  font-size: 12px;
+  text-align: right;
+  padding-top: 2px;
+  padding-left: 3px;
+}
+
+.input-error-images-atributes-product {
+  width: auto;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ff00001f;
+  color: red;
+  border-radius: 4px;
+  padding: 0px 10px;
+  text-align: center;
+  font-size: 12px;
+  margin-bottom: 7px;
+}
+
+.service-error-create-product {
+  width: 1294px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ff00002e;
+  color: #b00020;
+  border-radius: 8px;
+  padding: 0px 10px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.SpinnerCreateProduct {
+  text-align: center;
+  height: 34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.SpinnerCreateProductHidden {
+  visibility: hidden;
+}
+
+.Spinner img {
+  height: 60px;
+}
+
+.ButtonCreateProduct:hover, .ButtonImagesPlus:hover {
+  background-color: #0eada3;
+  transform: scale(1.02);
+}
+
+@media screen and (max-width: 1278px) {
+  .ContainerInputsAtributes {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 21px;
+  }
+
+  .ContainerAtributesFormAdmin {
+    height: 195px;
+    width: auto;
+  }
+
+  .NameAtribute,
+  .IconAtribute {
+    width: 100%;
+  }
+
+  .ContainerPoliciesFormAdmin textarea {
+    margin-bottom: 25px;
+  }
+
+  .ContainerPoliciesFormAdmin {
+    flex-direction: column;
+    padding: 25px 29px;
+  }
+
+  .custom-radio-checkbox__show {
+    font-size: 20px;
+  }
+
+  .FormCreateProductAdmin label input {
+    width: 317px;
+  }
+
+  .ButtonImagesFormAdmin {
+    font-size: 20px;
+  }
+
+  .ContainerImagesFormAdmin input {
+    width: 100%;
+  }
+
+  .ContainerImagesFormAdmin {
+    padding: 0px 29px;
+  }
+
+  .ContainerPoliciesFormAdmin label {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 706px) {
+  .ContainerInputsFormAdmin {
+    flex-direction: column;
+  }
+  .FormCreateProductAdmin label input {
+    width: 100%;
+  }
+  .custom-radio-checkbox__show {
+    height: 36px;
+    font-size: 27px;
+  }
+
+  .ContainerAtributesFormAdmin {
+    padding: 0px 15px;
+  }
+
+  .ContainerPoliciesFormAdmin {
+    box-shadow: none;
+    border-radius: 0px;
+    padding: 25px 10px;
+  }
+
+  .ContainerImagesFormAdmin {
+    padding: 0px 10px;
+  }
+
+  .ButtonImagesFormAdmin {
+    font-size: 25px;
+    height: 36px;
+  }
+
+  .TitleFormAdmin {
+    padding-left: 20px;
+  }
+
+  .FormCreateProductAdmin{
+    border-radius: 0px;
+  }
+}
