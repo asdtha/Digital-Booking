@@ -1,0 +1,34 @@
+.ContainerGeneralFavorites {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.ContainerFavorites {
+  display: flex;
+  grid-gap: 13px;
+  gap: 13px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 1283px;
+  padding: 15px 0px;
+}
+
+.TitleFavorites {
+  width: 100%;
+  color: #383b58;
+}
+
+.MessageNoData {
+  text-align: center;
+  font-size: 35px;
+  color: #545776;
+  opacity: 0.6;
+  width: 100%;
+}
+
+.MessageNoData i {
+  font-size: 60px;
+}
