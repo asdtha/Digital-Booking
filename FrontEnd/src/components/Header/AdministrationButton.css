@@ -1,0 +1,59 @@
+.ButtonAdmin {
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: #545776;
+  font-weight: 700;
+  width: auto;
+  height: 35px;
+  cursor: pointer;
+  border-right: 2px solid #1dbeb4;
+  padding-top: 12px;
+  padding-right: 20px;
+  padding-left: 20px;
+  position: relative;
+  transition: all 2s;
+}
+
+.ButtonAdmin::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: ".";
+  color: transparent;
+  background: #1dbeb4;
+  height: 2px;
+}
+
+.ButtonAdmin::after,
+.ButtonAdmin::before {
+  transition: all 0.5s;
+}
+
+.ButtonAdmin:hover {
+  color: #383b58;
+}
+
+.ButtonAdmin:hover::after {
+  width: 80%;
+}
+
+@media screen and (max-width: 706px) {
+  .ButtonAdmin {
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    border-radius: 0px;
+    width: 279px;
+    text-align: end;
+    align-self: center;
+    height: 60px;
+    color: #383b58;
+    border-color: #383b58;
+    padding-right: 0px;
+    padding-top: 0px;
+  }
+}
