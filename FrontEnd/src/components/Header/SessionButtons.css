@@ -1,0 +1,49 @@
+.Buttons {
+  width: 206px;
+  height: 40px;
+  border-radius: 5px;
+  background: transparent;
+  font-size: 16px;
+  color: #1dbeb4;
+  border: solid 1px #1dbeb4;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.3s ease-out;
+}
+
+.Buttons:hover {
+  /* background-color: #1dbeb4b0;
+  color: #ffff; */
+  /* transform: scale(1.01);
+  border: solid 1.2px #383b58;
+  color: #383b58; */
+  box-shadow: 0 0.5em 0.5em -0.4em #1dbeb4;
+  transform: translateY(-0.25em);
+}
+
+
+.HideButton {
+  display: none;
+}
+
+@media screen and (max-width: 1278px) {
+  .Buttons {
+    width: 164px;
+    height: 40px;
+  }
+}
+
+@media screen and (max-width: 706px) {
+  .Buttons {
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    border-radius: 0px;
+    width: 279px;
+    text-align: end;
+    align-self: center;
+    height: 60px;
+    color: #383b58;
+    border-color: #383b58;
+  }
+}
