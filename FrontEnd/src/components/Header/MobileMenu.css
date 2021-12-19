@@ -1,0 +1,130 @@
+.Menu {
+  display: none;
+  position: absolute;
+  width: 303px;
+  top: 0;
+  height: 100vh;
+  right: 0px;
+  background-color: #fff;
+  z-index: 101;
+  animation: menuActive 0.75s;
+}
+
+.ContainerMenuText {
+  height: 175px;
+  background-color: #1dbeb4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.TextMenu {
+  display: none;
+}
+
+.ContainerButtonsMobile {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.ContainerMenuText button {
+  font-size: 29px;
+  background: none;
+  border: none;
+  margin-left: 10px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.ContainerMenuText p {
+  font-weight: 700 !important;
+  text-align: end;
+  font-size: 20px;
+  color: #fff;
+  margin-right: 10px;
+  margin-bottom: 6px;
+}
+
+.ContainerButtonsIcons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.ContainerIconsMobile {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  bottom: 0px;
+  gap: 15px;
+  font-size: 25px;
+  padding: 0px 15px 18px 0px;
+  color: #545776;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.ButtonBurguer {
+  display: none;
+  font-size: 25px;
+  background: none;
+  border: none;
+  color: #545776;
+}
+
+.ContainerLogout {
+  width: 279px;
+  align-self: flex-end;
+  border-bottom: solid 1px;
+}
+
+.ContainerLogout p {
+  font-size: 12px;
+  color: #383b58;
+  font-weight: 700 !important;
+  text-align: end;
+  padding-bottom: 5px;
+}
+
+.ContainerLogout button {
+  border: none;
+  background: none;
+  color: #1dbeb4;
+}
+
+.ContainerIconFooter {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-bottom: 10px;
+  margin-top: 15px;
+}
+
+@keyframes menuActive {
+  0% {
+    transform: translateX(303px);
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes menuInactive {
+  0% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0%;
+    transform: translateX(303px);
+  }
+}
+
+@media screen and (max-width: 706px) {
+  .ButtonBurguer {
+    display: block;
+  }
+}
