@@ -1,0 +1,7 @@
+.Main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex: 1;
+  overflow: auto;
+}
