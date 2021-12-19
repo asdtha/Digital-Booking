@@ -1,0 +1,81 @@
+.ContainerUserAvatar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-left: 20px;
+}
+
+.ButtonLogout {
+  background: none;
+  border: none;
+  font-size: 20px;
+  font-weight: 700;
+  color: #383b58;
+  cursor: pointer;
+  width: 15px;
+  text-align: center;
+  transition: all 0.3s ease-out;
+}
+
+.ButtonLogout:hover {
+  transform: scale(1.1);
+}
+
+.ContainerAvatar {
+  display: flex;
+  gap: 10px;
+  margin-top: -10px;
+}
+
+.Avatar {
+  background-color: #383b58;
+  color: #ffff;
+  width: 37px;
+  height: 37px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.TextAvatar {
+  font-size: 20px;
+}
+
+.TextUser {
+  font-size: 16px;
+  color: #1dbeb4;
+}
+
+.SpanTextUser {
+  color: #909090;
+}
+
+@media screen and (max-width: 414px) {
+  .ButtonLogout {
+    display: none;
+  }
+
+  .ContainerAvatar {
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 0px 10px 10px 0px;
+  }
+
+  .Avatar {
+    background-color: #ffff;
+  }
+
+  .TextAvatar {
+    color: #383b58;
+  }
+
+  .TextUser {
+    text-align: end;
+    color: #383b58;
+  }
+
+  .SpanTextUser {
+    color: #ffff;
+  }
+}
