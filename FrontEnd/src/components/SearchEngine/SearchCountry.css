@@ -1,0 +1,116 @@
+.Country {
+  width: 422px;
+  height: 40px;
+  border-radius: 5px;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.15);
+  padding-left: 42px;
+  border: none;
+  margin-right: 8px;
+  font-size: 14px;
+  color: #545776;
+  background-color: #fff;
+  appearance: none;
+  cursor: pointer;
+  background-image: url("../../icons/location.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: contain;
+  background-size: 22px;
+  background-position: 16px;
+  font-weight: 500 !important;
+  text-align: start;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  width: 422px;
+  z-index: 1;
+  font-weight: 700;
+  margin-top: 3px;
+  padding: 0px 0px 10px;
+  border-radius: 0px 0px 6px 6px;
+  box-shadow: 0px 6px 13px 5px #383b58;
+}
+
+.dropdown-content div {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  width: 385px;
+  text-align: start;
+  border-bottom: 1px solid #1dbeb4;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  background-image: url("../../icons/locationLight.png");
+  font-size: 14px;
+  background-repeat: no-repeat;
+  background-position: left;
+  padding-left: 25px;
+  background-size: 17px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.dropdown-content div:hover {
+  transform: scale(1.03);
+}
+
+.TextDropdownCity {
+  display: flex;
+  flex-direction: column;
+  font-weight: 700 !important;
+  font-size: 15px;
+}
+
+.TextDropdownCountry {
+  font-size: 12px;
+  font-weight: 700 !important;
+  color: #545776;
+  width: 0px;
+}
+
+.show {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Country:focus {
+  outline: none;
+}
+
+@media screen and (max-width: 1278px) {
+  .Country,
+  .dropdown-content {
+    width: 254px;
+  }
+
+  .Country {
+    font-size: small;
+  }
+
+  .dropdown-content div {
+    width: 227px;
+  }
+}
+
+@media screen and (max-width: 706px) {
+  .Country {
+    width: 394px;
+    margin-right: 0px;
+    font-size: 14px;
+  }
+
+  .dropdown-content {
+    width: 394px;
+  }
+
+  .dropdown-content div {
+    width: 355px;
+  }
+}

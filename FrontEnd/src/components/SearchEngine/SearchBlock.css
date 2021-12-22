@@ -1,0 +1,80 @@
+/*Contenedor entero*/
+.ContainerSearch {
+  background-color: #545776;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #ffffff;
+  height: 149px;
+  width: 100%;
+  justify-content: center;
+}
+
+/*Cosas del titulo*/
+.TitleSearch {
+  font-size: 36px;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.FilterSearch {
+  display: flex;
+  justify-content: center;
+}
+
+/*Boton de busqueda*/
+.search-button {
+  color: #ffffff;
+  background-color: #1dbeb4;
+  cursor: pointer;
+  width: 206px;
+  border: none;
+  border-radius: 5px;
+  margin-left: 10px;
+  font-weight: 700;
+  font-size: 16px;
+  height: 40px;
+  transition: all 0.3s ease-out;
+}
+
+.search-button:hover {
+  background-color: #0eada3;
+  transform: scale(1.02);
+}
+
+.HiddenSearchBlock {
+  display: none;
+}
+
+@media screen and (max-width: 1278px) {
+  .TitleSearch {
+    font-size: 30px;
+  }
+
+  .FilterSearch {
+    flex-wrap: wrap;
+  }
+
+  .search-button {
+    width: 166px;
+  }
+}
+
+@media screen and (max-width: 706px) {
+  .ContainerSearch {
+    flex-wrap: wrap;
+    height: 263px;
+  }
+
+  .FilterSearch {
+    flex-direction: column;
+    gap: 9px;
+    align-items: center;
+  }
+
+  .search-button {
+    width: 394px;
+    margin-left: 0px;
+    height: 40px;
+  }
+}
