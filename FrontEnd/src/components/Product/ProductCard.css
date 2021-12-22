@@ -1,0 +1,212 @@
+.ContainerCard {
+  display: flex;
+  width: 635px;
+  height: 283px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px 0px rgb(0 0 0 / 25%);
+  border: 1px solid #dfe4ea;
+  background-color: #ffff;
+}
+
+.ImgContainer {
+  width: 311px;
+  position: relative;
+}
+
+.Img {
+  width: 311px;
+  height: 283px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.ContainerDescription {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 20px 14px 11px 16px;
+}
+
+.ContainerCategoryScore {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 21px;
+}
+
+.ContainerCategory {
+  display: flex;
+}
+
+.TextCategoryProduct {
+  padding-right: 6px;
+  color: #383b58;
+  opacity: 50%;
+  font-size: 14px;
+}
+
+.Title {
+  color: #383b58;
+}
+
+.StarIcon {
+  font-size: 14px;
+  color: #1dbeb4;
+}
+
+.ContainerScore {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.Score {
+  width: 36px;
+  height: 30px;
+  border-radius: 10px;
+  background-color: #383b58;
+  color: #ffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ScoreNumber {
+  font-size: 17px;
+}
+
+.ScoreText {
+  font-size: 14px;
+  color: #383b58;
+}
+
+.ContainerLocation {
+  display: flex;
+  gap: 6px;
+  padding-bottom: 3px;
+}
+
+.fa-map-marker-alt {
+  font-size: 14px;
+  color: #545776;
+}
+
+.TextLocation {
+  font-size: 14px;
+  color: #383b58;
+}
+
+.ContainerIcons {
+  display: flex;
+  gap: 7px;
+  font-size: 18px;
+  color: #383b58;
+  padding-bottom: 32px;
+}
+
+.ContainerDescButton {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.Description {
+  height: 52px;
+  overflow: hidden;
+}
+
+.DescriptionText {
+  color: #383b58;
+  font-size: 14px;
+}
+
+.Button {
+  width: 296px;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  background-color: #1dbeb4;
+  box-shadow: 0px 2px 4px rgb(0 0 0 / 12%);
+  color: #ffff;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease-out;
+}
+
+.Button:hover {
+  background-color: #0eada3;
+  transform: scale(1.02);
+}
+
+.HeartIcon {
+  color: #ffff;
+  position: absolute;
+  right: 14px;
+  top: 22px;
+  font-size: 21px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+
+.HeartIcon:hover {
+  transform: scale(1.2);
+}
+
+.Span {
+  color: #1dbeb4;
+}
+
+@media screen and (max-width: 1278px) {
+  .ContainerCard {
+    width: 710px;
+    align-items: center;
+  }
+
+  .ImgContainer {
+    width: 344.11px;
+    height: 259px;
+  }
+
+  .Img {
+    width: 344.11px;
+    height: 259px;
+    border-radius: 0px 8px 8px 0px;
+  }
+
+  .Button {
+    width: 331px;
+  }
+}
+
+@media screen and (max-width: 706px) {
+  .ContainerCard {
+    flex-direction: column;
+    width: 393px;
+    height: 491px;
+  }
+
+  .ImgContainer {
+    width: 393px;
+    height: 231px;
+  }
+
+  .Img {
+    width: 393px;
+    height: 231px;
+    border-radius: 0px 0px 8px 8px;
+  }
+
+  .ContainerDescription {
+    height: 260px;
+  }
+
+  .ContainerIcons {
+    padding-bottom: 20px;
+  }
+
+  .Button {
+    width: 362px;
+  }
+}

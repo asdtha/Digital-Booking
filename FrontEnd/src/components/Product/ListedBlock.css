@@ -1,0 +1,50 @@
+.Section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: rgb(56 59 88 / 10%);
+  height: max-content;
+}
+
+.SectionContent {
+  display: flex;
+  gap: 13px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 1283px;
+  padding: 15px 0px;
+}
+
+.TitleSection {
+  width: 100%;
+  color: #383b58;
+}
+
+.InfoFilter {
+  width: 100%;
+  text-align: center;
+  height: 250px;
+  padding-top: 50px;
+  color: #383b58;
+  font-size: 22px;
+}
+
+
+
+@media screen and (max-width: 1278px) {
+  .SectionContent {
+    width: 710px;
+  }
+}
+
+@media screen and (max-width: 706px) {
+  .Section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .SectionContent {
+    flex-direction: column;
+    width: 393px;
+  }
+}
