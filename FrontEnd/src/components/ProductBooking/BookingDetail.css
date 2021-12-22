@@ -1,0 +1,164 @@
+.ContainerBookingDetail {
+  background-color: #ffff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+  border: 1px solid #dfe4ea;
+  margin-top: 83px;
+}
+
+.TitleBookingDetail {
+  margin: 21px 24px;
+  color: #383b58;
+  font-weight: 700;
+}
+
+.ImageBookingDetail {
+  width: 409px;
+  object-fit: cover;
+  height: 300px;
+}
+
+.ContainerDescriptionBooking {
+  padding: 43px 21px 21px;
+}
+
+.CategoryBookingDetail {
+  font-size: 14px;
+  font-weight: 700 !important;
+  color: #383b58;
+  opacity: 0.5;
+}
+
+.TitleNameBookingDetail {
+  color: #383b58;
+}
+
+.StarsContainerBookingDetail {
+  font-size: 14px;
+  color: #1dbeb4;
+  margin-bottom: 17px;
+}
+
+.ContainerLocationBookingDetail {
+  display: flex;
+  font-size: 14px;
+  gap: 10px;
+  padding-bottom: 43px;
+  border-bottom: 1px solid #bebebe;
+}
+
+.ContainerLocationBookingDetail p {
+  color: #383b58;
+}
+
+.CheckBookingDetail {
+  display: flex;
+  justify-content: space-between;
+  /* border-top: 1px solid #bebebe; */
+  padding: 25px 6px;
+  border-bottom: 1px solid #bebebe;
+}
+
+.CheckBookingDetail h4 {
+  color: #4f4f50;
+}
+
+.CheckBookingDetailInput {
+  font-size: 14px;
+  color: #383b58;
+  border-style: none;
+  text-align: end;
+}
+
+.CheckBookingDetailInput:focus {
+  outline: none;
+}
+
+.ButtonBookingDetail {
+  width: 365px;
+  height: 50px;
+  margin-top: 45px;
+  background-color: #1dbeb4;
+  border: none;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  font-weight: 700;
+}
+
+.ButtonBookingDetail:hover {
+  background-color: #0eada3;
+  transform: scale(1.02);
+}
+
+.input-error-check {
+  color: #ff0000;
+  font-size: 12px;
+  text-align: right;
+  padding-top: 5px;
+}
+
+@media screen and (max-width: 1278px) {
+  .ContainerBookingDetail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+  }
+
+  .TitleBookingDetail {
+    margin: 24px 0px 10px 29px;
+  }
+
+  .ImageBookingDetail {
+    width: 318px;
+    height: 312px;
+    margin: 0px 0px 36px 29px;
+    border-radius: 5px;
+  }
+
+  .ContainerDescriptionBooking {
+    padding-right: 20px;
+  }
+
+  .ContainerLocationBookingDetail {
+    padding-bottom: 23px;
+  }
+
+  .CheckBookingDetail {
+    padding: 20px 6px;
+  }
+
+  .ButtonBookingDetail {
+    margin-top: 30px;
+    width: 338px;
+  }
+}
+
+@media screen and (max-width: 706px) {
+  .ContainerBookingDetail {
+    flex-direction: column;
+  }
+
+  .TitleBookingDetail {
+    margin: 24px 0px 10px 10px;
+  }
+
+  .ImageBookingDetail {
+    width: 391px;
+    height: 269px;
+    margin: 0px;
+    border-radius: 0px;
+  }
+
+  .ContainerDescriptionBooking {
+    padding: 18px 0px;
+  }
+
+  .ButtonBookingDetail {
+    width: 360px;
+  }
+}

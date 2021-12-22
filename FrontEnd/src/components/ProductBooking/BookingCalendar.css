@@ -1,0 +1,171 @@
+.ContainerCalendarBooking {
+  margin-top: 35px;
+}
+
+.ContainerCalendarBooking h2 {
+  padding-bottom: 13px;
+  color: #383b58;
+}
+
+.ContainerCalendarBooking .rmdp-wrapper {
+  width: 858px;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+  border-radius: 5px;
+  height: 309px;
+}
+
+.ContainerCalendarBooking .rmdp-week,
+.rmdp-ym {
+  width: 263px;
+  padding-bottom: 1px;
+}
+
+.ContainerCalendarBooking .rmdp-day-picker {
+  justify-content: space-around;
+}
+
+.ContainerCalendarBooking .rmdp-left {
+  position: absolute;
+  top: 146px;
+  left: -60px;
+  background-color: #1dbeb4;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+}
+
+.ContainerCalendarBooking .rmdp-right {
+  position: absolute;
+  top: 146px;
+  right: -60px;
+  background-color: #1dbeb4;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+}
+
+.ContainerCalendarBooking .rmdp-arrow {
+  margin-top: 0px;
+  height: 9px;
+  width: 9px;
+  color: #fff;
+  border-color: #fff;
+}
+
+.ContainerCalendarBooking .rmdp-calendar {
+  width: 685px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ContainerCalendarBooking .rmdp-day {
+  border-radius: 50%;
+}
+
+.ContainerCalendarBooking .rmdp-header-values span {
+  font-weight: 700 !important;
+}
+
+.ContainerCalendarBooking .rmdp-week-day {
+  color: #383b58;
+  font-weight: 700 !important;
+}
+
+.ContainerCalendarBooking .rmdp-range {
+  background-color: #1dbeb3c9;
+  box-shadow: 0 0 3px #1dbeb3ad;
+}
+
+.ContainerCalendarBooking .rmdp-range.end, .ContainerCalendarBooking .rmdp-range.start {
+  border: 2px solid #0b8179;
+}
+
+.ContainerCalendarBooking
+  .rmdp-day:not(.rmdp-disabled):not(.rmdp-day-hidden)
+  span:hover {
+  background-color: #1dbeb39d;
+  color: #fff;
+}
+
+.ContainerCalendarBooking .rmdp-day.rmdp-today span {
+  background-color: #383b58b0;
+}
+
+.ContainerCalendarBooking .rmdp-arrow-container:hover {
+  background-color: #1dbeb4;
+}
+
+.ContainerCalendarBooking .rmdp-day-picker::after {
+  content: "";
+  width: 1px;
+  height: 265px;
+  position: absolute;
+  right: 50%;
+  margin-top: -30px;
+  background: #a8a8a8;
+}
+
+@media screen and (max-width: 1278px) {
+  .ContainerCalendarBooking .rmdp-wrapper {
+    width: 722px;
+  }
+
+  .ContainerCalendarBooking .rmdp-right {
+    top: 54%;
+    right: 0px;
+    background: none;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+  }
+
+  .ContainerCalendarBooking .rmdp-left {
+    position: absolute;
+    top: 54%;
+    left: 0px;
+    background: none;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+  }
+
+  .ContainerCalendarBooking .rmdp-arrow {
+    margin-top: 0 px;
+    height: 9 px;
+    width: 9 px;
+    color: #545776;
+    border-color: #545776;
+  }
+}
+
+@media screen and (max-width: 706px) {
+  .ContainerCalendarBooking .rmdp-day-picker::after {
+    content: "";
+    width: 0px;
+    height: 0px;
+  }
+
+  .ContainerCalendarBooking .rmdp-wrapper {
+    width: 390px;
+    height: 328px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ContainerCalendarBooking .rmdp-top-class {
+    width: 268px;
+  }
+
+  .ContainerCalendarBooking .rmdp-week,
+  .rmdp-ym {
+    width: 300px;
+  }
+
+  .ContainerCalendarBooking .rmdp-header {
+    margin-bottom: 25px;
+  }
+}

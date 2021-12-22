@@ -1,0 +1,60 @@
+.FormBooking {
+  display: flex;
+  gap: 27px;
+  padding-bottom: 50px;
+  width: 100%;
+  justify-content: center;
+  background-color: #eeeef1;
+  flex-wrap: wrap;
+}
+
+.ContainerFormLeft {
+  padding-top: 37px;
+}
+
+.input-error {
+  color: #ff0000;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: right;
+}
+
+.service-error-booking {
+  width: 1294px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ff00002e;
+  color: #b00020;
+  border-radius: 8px;
+  padding: 0px 10px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.SpinnerBooking {
+  text-align: center;
+  width: 100%;
+}
+
+.SpinnerBookingHidden {
+  visibility: hidden;
+}
+
+@media screen and (max-width: 1278px)  {
+  .service-error-booking{
+    width: 728px;
+  }
+}
+
+@media screen and (max-width: 706px) {
+  .ContainerFormLeft {
+    margin-left: 37px;
+    margin-right: 37px;
+  }
+
+  .service-error-booking{
+    width: 393px;
+  }
+}

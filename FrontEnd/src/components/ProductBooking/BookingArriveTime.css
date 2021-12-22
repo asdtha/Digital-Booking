@@ -1,0 +1,98 @@
+.ContainerTimeBooking {
+  margin-top: 35px;
+}
+
+.ContainerTimeBooking h2 {
+  padding-bottom: 13px;
+  color: #383b58;
+}
+
+.ContainerSelectTimeBooking {
+  padding: 19px 25px;
+  background-color: #fff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.InfoTimeBooking {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  color: #383b58;
+}
+
+.InfoTimeBooking i {
+  font-size: 24px;
+}
+
+.InfoTimeBooking p {
+  font-size: 14px;
+}
+
+.LabelTimeBooking {
+  display: flex;
+  flex-direction: column;
+  color: #383b58;
+  font-size: 12px;
+}
+
+.SelectTimeBooking {
+  height: 40px;
+  width: 388px;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  border: none;
+  padding-left: 12px;
+  margin-top: 10px;
+  font-size: 12px;
+  color: #545776;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABmJLR0QA/wD/AP+gvaeTAAAAoElEQVQokdWRLQ4CMRCF36wg0CNsWoLnFHiqMQ0JWcedGgxqbatbx0nIGrAsIMig+Wl3QcFn3/veiAH+l0mMw0/6clePAKAonRM3Ph1l9KaXGL2hiziUzomi0boFcUUMOw5umRNVdAtiWAKvG63bh0AFf00NdOXJQqeYKuZEejcgozfEsAA2AFZMqPaz+TZ79XlABX/u+4UXpnU9+Er8be7yhFS/1kMRlgAAAABJRU5ErkJggg==");
+  background-repeat: no-repeat;
+  background-position: 358px;
+}
+
+.SelectTimeBooking option {
+  color: #383b58;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.SelectTimeBooking:focus {
+  outline: none;
+}
+
+.input-error-time {
+  color: #ff0000;
+  font-size: 12px;
+  text-align: left;
+  padding-top: 8px;
+  padding-left: 3px;
+}
+
+@media screen and (max-width: 1278px) {
+  .SelectTimeBooking {
+    width: 320px;
+    background-position: 290px;
+  }
+}
+
+@media screen and (max-width: 706px) {
+  .ContainerSelectTimeBooking {
+    padding: 19px 15px;
+    align-items: center;
+  }
+
+  .InfoTimeBooking i {
+    font-size: 20px;
+  }
+
+  .SelectTimeBooking {
+    width: 360px;
+    background-position: 335px;
+  }
+}
