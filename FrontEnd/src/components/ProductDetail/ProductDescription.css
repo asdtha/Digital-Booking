@@ -1,0 +1,36 @@
+.ContainerProductDescription {
+  background-color: #ffff;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ContainerProductDescription h2 {
+  margin-top: 35px;
+  margin-bottom: 35px;
+  color: #383b58;
+  font-weight: 700;
+  width: 1284px;
+}
+
+.ContainerProductDescription p {
+  width: 1284px;
+  color: #4f4f50;
+  padding-bottom: 15px;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 1278px) {
+  .ContainerProductDescription h2,
+  .ContainerProductDescription p {
+    width: 708px;
+  }
+}
+
+@media screen and (max-width: 706px) {
+  .ContainerProductDescription h2,
+  .ContainerProductDescription p {
+    width: 390px;
+  }
+}

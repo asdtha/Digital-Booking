@@ -1,0 +1,264 @@
+.ContainerAvailableDates {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #ececef;
+  align-items: center;
+  padding: 35px 0px;
+  gap: 20px;
+}
+
+.ContainerAvailableDates h2 {
+  width: 1284px;
+  color: #383b58;
+}
+
+.ContainerCalendarButton {
+  display: flex;
+  width: 1284px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ContainerCalendarButton .rmdp-wrapper {
+  width: 848px;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+  border-radius: 5px;
+  height: 309px;
+}
+
+.ContainerStartBooking {
+  height: 149px;
+  width: 410px;
+  background-color: #ffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  padding: 0px 22px;
+}
+
+.ContainerStartBooking p {
+  color: #4f4f50;
+  font-weight: 700 !important;
+}
+
+.ContainerStartBookingButton {
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  background-color: #1dbeb4;
+  font-size: 16px;
+  color: #ffff;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease-out;
+}
+
+.ContainerStartBookingButton:hover {
+  transform: scale(1.02);
+  background-color: #0eada3;
+}
+
+.ContainerCalendarButton .rmdp-day-picker {
+  justify-content: space-around;
+}
+
+.ContainerCalendarButton .rmdp-left {
+  position: absolute;
+  top: 146px;
+  left: -60px;
+  background-color: #1dbeb4;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+}
+
+.ContainerCalendarButton .rmdp-right {
+  position: absolute;
+  top: 146px;
+  right: -60px;
+  background-color: #1dbeb4;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+}
+
+.ContainerCalendarButton .rmdp-arrow {
+  margin-top: 0px;
+  height: 9px;
+  width: 9px;
+  color: #fff;
+  border-color: #fff;
+}
+
+.ContainerCalendarButton .rmdp-arrow-container:hover {
+  background-color: #1dbeb4;
+}
+
+.ContainerCalendarButton .rmdp-calendar {
+  width: 670px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ContainerCalendarButton .rmdp-header-values span {
+  font-weight: 700 !important;
+}
+
+.ContainerCalendarButton .rmdp-week-day {
+  color: #383b58;
+  font-weight: 700 !important;
+}
+
+.ContainerCalendarButton .rmdp-week,
+.rmdp-ym {
+  width: 263px;
+  padding-bottom: 1px;
+}
+
+.ContainerCalendarButton .rmdp-day.rmdp-today span {
+  background: none;
+  color: #000;
+}
+
+.ContainerCalendarButton
+  .rmdp-day:not(.rmdp-disabled):not(.rmdp-day-hidden)
+  span:hover {
+  background: none;
+  color: #000;
+  box-shadow: none;
+}
+
+.ContainerCalendarButton .rmdp-day.rmdp-selected span:not(.highlight) {
+  background: none;
+  box-shadow: none;
+  color: #000;
+}
+
+.rmdp-day span {
+  font-weight: 500 !important;
+}
+
+.ContainerCalendarButton .rmdp-day-picker::after {
+  content: "";
+  width: 1px;
+  height: 265px;
+  position: absolute;
+  right: 50%;
+  margin-top: -30px;
+  background: #a8a8a8;
+}
+
+@media screen and (max-width: 1278px) {
+  .ContainerAvailableDates h2 {
+    width: 708px;
+  }
+
+  .ContainerCalendarButton {
+    width: 708px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .ContainerCalendarButton .rmdp-wrapper {
+    width: 708px;
+  }
+
+  .ContainerStartBooking {
+    flex-direction: row;
+    width: 708px;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    background: none;
+    box-shadow: none;
+    padding: 0px;
+  }
+
+  .ContainerStartBooking p,
+  .ContainerStartBookingButton {
+    width: 354px;
+  }
+
+  .ContainerCalendarButton .rmdp-left {
+    position: absolute;
+    top: 54%;
+    left: 0px;
+    background: none;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+  }
+
+  .ContainerCalendarButton .rmdp-right {
+    top: 54%;
+    right: 0px;
+    background: none;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+  }
+
+  .ContainerCalendarButton .rmdp-arrow {
+    margin-top: 0 px;
+    height: 9 px;
+    width: 9 px;
+    color: #545776;
+    border-color: #545776;
+  }
+}
+
+@media screen and (max-width: 706px) {
+  .ContainerStartBooking {
+    flex-direction: column;
+  }
+
+  .ContainerCalendarButton .rmdp-day-picker::after {
+    content: "";
+    width: 0px;
+    height: 0px;
+  }
+
+  .ContainerAvailableDates h2 {
+    width: 390px;
+  }
+
+  .ContainerCalendarButton .rmdp-wrapper {
+    width: 390px;
+    height: 328px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ContainerCalendarButton .rmdp-top-class {
+    width: 268px;
+  }
+
+  .ContainerCalendarButton .rmdp-header {
+    margin-bottom: 25px;
+  }
+
+  .ContainerCalendarButton .rmdp-day-picker div {
+    width: 300px;
+  }
+
+  .ContainerCalendarButton,
+  .ContainerStartBooking {
+    width: 390px;
+  }
+
+  .ContainerStartBooking p,
+  .ContainerStartBookingButton {
+    width: 390px;
+  }
+}

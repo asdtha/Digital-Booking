@@ -1,0 +1,71 @@
+.ContainerProductFeatures {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffff;
+}
+
+.ContainerTitleFeatures {
+  padding-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-bottom: solid 2px #1dbeb4;
+}
+
+.ContainerTitleFeatures h2 {
+  width: 1284px;
+  padding-bottom: 10px;
+  color: #383b58;
+}
+
+.ContainerFeaturesAndIcons {
+  width: 1284px;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 35px;
+}
+
+.ContainerFeaturesAndIcons div {
+  width: 320px;
+  height: 26px;
+  display: flex;
+  gap: 15px;
+  margin-bottom: 35px;
+}
+
+.ContainerFeaturesAndIcons div i {
+  color: #1dbeb4;
+}
+
+.ContainerFeaturesAndIcons div p {
+  color: #4f4f50;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 1278px) {
+  .ContainerTitleFeatures h2,
+  .ContainerFeaturesAndIcons {
+    width: 708px;
+  }
+
+  .ContainerFeaturesAndIcons div {
+    width: 354px;
+  }
+}
+
+@media screen and (max-width: 706px) {
+  .ContainerTitleFeatures h2 {
+    width: 390px;
+  }
+
+  .ContainerFeaturesAndIcons {
+    width: 380px;
+  }
+
+  .ContainerFeaturesAndIcons div {
+    width: 188px;
+    margin-bottom: 25px;
+  }
+}

@@ -1,0 +1,32 @@
+.ContainerShareButtons {
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  color: #383b58;
+}
+.ContainerShareButtons h3 {
+  font-size: 25px;
+}
+
+.ContainerShareIcon {
+  width: 260px;
+  border: solid 2px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0px 20px;
+  font-size: 20px;
+  justify-content: center;
+  border-color: #1dbeb3;
+  box-shadow: 0px 1px 5px 2px;
+  transition: all 0.3s ease-out;
+}
+
+.ContainerShareIcon:hover {
+  transform: scale(1.1);
+}

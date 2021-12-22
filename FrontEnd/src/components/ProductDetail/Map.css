@@ -1,0 +1,61 @@
+.ContainerMapGeneral {
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ContainerTitleMap {
+  padding-top: 35px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-bottom: solid 2px #1dbeb4;
+}
+
+.ContainerTitleMap h2 {
+  width: 1284px;
+  padding-bottom: 10px;
+  color: #383b58;
+}
+
+.ContainerMapGeneral p {
+  width: 1284px;
+  padding: 20px 0px;
+  color: #4f4f50;
+  font-weight: 700 !important;
+}
+
+.MapContainer {
+  height: 540px;
+  width: 1286px;
+}
+
+.gm-style .gm-style-iw-c{
+  box-shadow: rgb(29 190 180) 1px 0px 18px 3px !important;
+}
+
+@media screen and (max-width: 1278px) {
+  .ContainerTitleMap h2,
+  .ContainerMapGeneral p {
+    width: 708px;
+  }
+
+  .MapContainer {
+    width: 708px;
+    height: 500px;
+  }
+}
+
+@media screen and (max-width: 706px) {
+  .ContainerTitleMap h2,
+  .ContainerMapGeneral p {
+    width: 390px;
+  }
+
+  .MapContainer {
+    width: 390px;
+    height: 307px;
+  }
+}

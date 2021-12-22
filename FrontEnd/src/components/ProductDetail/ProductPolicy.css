@@ -1,0 +1,76 @@
+.ContainerProductPolicy {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffff;
+}
+
+.ContainerTitlePolicy {
+  padding-top: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-bottom: solid 2px #1dbeb4;
+}
+
+.ContainerTitlePolicy h2 {
+  width: 1284px;
+  padding-bottom: 10px;
+  color: #383b58;
+}
+
+.ContainerPoliciyLists {
+  width: 1284px;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 35px;
+}
+
+.ContainerPoliciyLists div {
+  width: 428px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 35px;
+}
+
+.ContainerPoliciyLists div h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #545776;
+  padding-bottom: 20px;
+}
+
+.ContainerPoliciyLists div ul {
+  list-style: none;
+}
+
+.ContainerPoliciyLists div ul li {
+  padding-bottom: 22px;
+  width: 300px;
+  color: #4f4f50;
+  font-size: 14px;
+  font-weight: 500 !important;
+}
+
+@media screen and (max-width: 1278px) {
+  .ContainerTitlePolicy h2 {
+    width: 708px;
+  }
+
+  .ContainerPoliciyLists {
+    width: 708px;
+  }
+
+  .ContainerPoliciyLists div {
+    width: 354px;
+  }
+}
+
+@media screen and (max-width: 706px) {
+  .ContainerTitlePolicy h2,
+  .ContainerPoliciyLists {
+    width: 390px;
+  }
+}
