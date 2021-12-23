@@ -5,13 +5,13 @@ import useFetch from "../../hooks/useFetch";
 import ProductHeading from "../ProductDetail/ProductHeading";
 
 function FavoriteProductsList() {
-  //const URL_API = "http://localhost:8080/API/products/allProducts ";
-  const URL_API = "http://digitalbooking.click:8080/API/products/allProducts ";
+  const URL_API = "http://localhost:8080/API/products/allProducts ";
+  //const URL_API = "http://digitalbooking.click:8080/API/products/allProducts ";
  
-  //const URL_API_FAVORITES_GET =
-    //"http://localhost:8080/API/favorites/allFavorites";
   const URL_API_FAVORITES_GET =
-    "http://digitalbooking.click:8080/API/favorites/allFavorites";
+    "http://localhost:8080/API/favorites/allFavorites";
+  //const URL_API_FAVORITES_GET =
+    //"http://digitalbooking.click:8080/API/favorites/allFavorites";
 
   const userLogin = localStorage.getItem("userLogin");
   const userLoginParse =

@@ -3,8 +3,8 @@ import "./CategoriesBlock.css";
 import useFetch from "../../hooks/useFetch";
 
 export default function CategoriesBlock() {
- // const URL_API = "http://localhost:8080/API/category";
-  const URL_API = "http://digitalbooking.click:8080/API/category";
+  const URL_API = "http://localhost:8080/API/category";
+  //const URL_API = "http://digitalbooking.click:8080/API/category";
 
   const { data } = useFetch(URL_API, {});
 
