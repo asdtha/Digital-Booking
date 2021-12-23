@@ -63,10 +63,10 @@ function ProductCard({
     }
   });
 
-  //const URL_API_FAVORITES_POST = `http://localhost:8080/API/favorites/${id}`;
-  const URL_API_FAVORITES_POST = `http://digitalbooking.click:8080/API/favorites/${id}`;
-  //const URL_API_FAVORITES_DELETE = `http://localhost:8080/API/favorites/delete/${stateIdFavorite}`;
-  const URL_API_FAVORITES_DELETE = `http://digitalbooking.click:8080/API/favorites/delete/${stateIdFavorite}`;
+  const URL_API_FAVORITES_POST = `http://localhost:8080/API/favorites/${id}`;
+  //const URL_API_FAVORITES_POST = `http://digitalbooking.click:8080/API/favorites/${id}`;
+  const URL_API_FAVORITES_DELETE = `http://localhost:8080/API/favorites/delete/${stateIdFavorite}`;
+  //const URL_API_FAVORITES_DELETE = `http://digitalbooking.click:8080/API/favorites/delete/${stateIdFavorite}`;
 
   const userLogin = localStorage.getItem("userLogin");
   const userLoginParse =

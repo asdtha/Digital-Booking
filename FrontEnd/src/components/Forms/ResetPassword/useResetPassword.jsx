@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 
 const useResetPassword = (callback, validate) => {
-  //const URL_API = "http://localhost:8080/API/resetPassword";
-  const URL_API = "http://digitalbooking.click:8080/API/resetPassword";
+  const URL_API = "http://localhost:8080/API/resetPassword";
+  //const URL_API = "http://digitalbooking.click:8080/API/resetPassword";
   const [values, setValues] = useState({
     email: "",
   });

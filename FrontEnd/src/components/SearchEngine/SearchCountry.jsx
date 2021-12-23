@@ -3,8 +3,8 @@ import "./SearchCountry.css";
 import useFetch from "../../hooks/useFetch";
 
 export default function Buscador() {
-  //const URL_API = "http://localhost:8080/API/cities/allCities";
-  const URL_API = "http://digitalbooking.click:8080/API/cities/allCities";
+  const URL_API = "http://localhost:8080/API/cities/allCities";
+  //const URL_API = "http://digitalbooking.click:8080/API/cities/allCities";
 
   const { data } = useFetch(URL_API, {});
   const [stateCity, setCity] = useState("¿A dónde vamos?");

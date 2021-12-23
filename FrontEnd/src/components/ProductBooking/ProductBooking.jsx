@@ -19,10 +19,10 @@ function ProductBooking() {
 
   let { id } = useParams();
 
-  //const URL_API = `http://localhost:8080/API/products/${id}`;
-  const URL_API = `http://digitalbooking.click:8080/API/products/${id}`;
-  //const URL_API_POST = "http://localhost:8080/API/bookings";
-  const URL_API_POST = "http://digitalbooking.click:8080/API/bookings";
+  const URL_API = `http://localhost:8080/API/products/${id}`;
+  //const URL_API = `http://digitalbooking.click:8080/API/products/${id}`;
+  const URL_API_POST = "http://localhost:8080/API/bookings";
+  //const URL_API_POST = "http://digitalbooking.click:8080/API/bookings";
 
   const { data } = useFetch(URL_API, {});
 

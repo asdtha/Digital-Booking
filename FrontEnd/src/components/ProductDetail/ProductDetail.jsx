@@ -15,8 +15,8 @@ function ProductDetail() {
 
   localStorage.setItem("idProduct", id);
 
-  //const URL_API = `http://localhost:8080/API/products/${id}`;
-  const URL_API = `http://digitalbooking.click:8080/API/products/${id}`;
+  const URL_API = `http://localhost:8080/API/products/${id}`;
+  //const URL_API = `http://digitalbooking.click:8080/API/products/${id}`;
   const { data } = useFetch(URL_API, {});
 
   const [dataFavorites, setDataFavorites] = useState();
@@ -24,10 +24,10 @@ function ProductDetail() {
   const userLoginParse =
     userLogin && JSON.parse(localStorage.getItem("userLogin"));
 
-  //const URL_API_FAVORITES_GET =
-    //"http://localhost:8080/API/favorites/allFavorites";
   const URL_API_FAVORITES_GET =
-    "http://digitalbooking.click:8080/API/favorites/allFavorites";
+    "http://localhost:8080/API/favorites/allFavorites";
+  //const URL_API_FAVORITES_GET =
+    //"http://digitalbooking.click:8080/API/favorites/allFavorites";
   useEffect(() => {
     if (userLoginParse) {
       
