@@ -7,16 +7,16 @@ import validate from "./validateFormProduct";
 import spinner from "../../icons/Ellipsis.svg";
 
 function AdministrationForm() {
-  //const URL_API_CATEGORY = "http://localhost:8080/API/category";
-  const URL_API_CATEGORY = "http://digitalbooking.click:8080/API/category";
-  //const URL_API_CITY = "http://localhost:8080/API/cities/allCities";
-  const URL_API_CITY = "http://digitalbooking.click:8080/API/cities/allCities";
-  //const URL_API_ATRIBUTES =
-    //"http://localhost:8080/API/characteristics/allCharacteristics";
-    const URL_API_ATRIBUTES =
-    "http://digitalbooking.click:8080/API/characteristics/allCharacteristics";
-  //const URL_API_POST = "http://localhost:8080/API/products";
-  const URL_API_POST = "http://digitalbooking.click:8080/API/products";
+  const URL_API_CATEGORY = "http://localhost:8080/API/category";
+  //const URL_API_CATEGORY = "http://digitalbooking.click:8080/API/category";
+  const URL_API_CITY = "http://localhost:8080/API/cities/allCities";
+  //const URL_API_CITY = "http://digitalbooking.click:8080/API/cities/allCities";
+  const URL_API_ATRIBUTES =
+     "http://localhost:8080/API/characteristics/allCharacteristics";
+  /*   const URL_API_ATRIBUTES = 
+    "http://digitalbooking.click:8080/API/characteristics/allCharacteristics"; */
+  const URL_API_POST = "http://localhost:8080/API/products";
+  //const URL_API_POST = "http://digitalbooking.click:8080/API/products";
 
   const { data: dataCity } = useFetch(URL_API_CITY, {});
   const { data: dataCategory } = useFetch(URL_API_CATEGORY, {});

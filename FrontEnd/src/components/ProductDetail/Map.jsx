@@ -70,7 +70,7 @@ function Map({latitude, longitude, hotel, streetName, streetNumber, city, countr
       <p>{city}, {country}</p>
       <div className="MapContainer">
         <GoogleMap
-          bootstrapURLKeys={{ key: "AIzaSyBFIXEhFJoeq28Kf21uO5SJJkZtNCdz4GU" }}
+          bootstrapURLKeys={{ key: "" }}
           defaultCenter={place}
           defaultZoom={zoom}
           yesIWantToUseGoogleMapApiInternals
