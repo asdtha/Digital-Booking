@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 
 const useRegisterForm = (callback, registerValidations) => {
-//  const URL_API = "http://localhost:8080/API/authenticate/register";
-  const URL_API = "http://digitalbooking.click:8080/API/authenticate/register";
+  const URL_API = "http://localhost:8080/API/authenticate/register";
+  //const URL_API = "http://digitalbooking.click:8080/API/authenticate/register";
 
   const [values, setValues] = useState({
     nombre: "",

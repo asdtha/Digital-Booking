@@ -1,8 +1,8 @@
 import { useState, useEffect, useContext } from "react";
 
 const useChangePasswordForm = (callback, validate) => {
-  //const URL_API = "http://localhost:8080/API/changePassword";
-  const URL_API = "http://digitalbooking.click:8080/API/changePassword";
+  const URL_API = "http://localhost:8080/API/changePassword";
+  //const URL_API = "http://digitalbooking.click:8080/API/changePassword";
   const urlParams = new URLSearchParams(window.location.search);
   const param = urlParams.get("token");
 
