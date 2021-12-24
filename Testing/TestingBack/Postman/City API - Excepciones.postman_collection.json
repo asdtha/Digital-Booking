@@ -1,0 +1,258 @@
+{
+	"info": {
+		"_postman_id": "daf661d5-55f4-4304-a103-226cec5af472",
+		"name": "City API - Excepciones",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Postear city con ID asignada",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"tiene estatus 400 y tiene body\", function () {\r",
+							"    pm.response.to.have.status(400)\r",
+							"    pm.response.to.be.badRequest\r",
+							"    pm.response.to.has.body\r",
+							"});\r",
+							"\r",
+							"pm.test(\"el texto de error es correcto\",function(){\r",
+							"    pm.expect(pm.response.text()).to.include(\"No es posible guardar una ciudad con Id ya asignado\")\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\":4, \"name\":\"ciudad con id\",\"country_name\":\"babia\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/API/cities",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"API",
+						"cities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete city con ID 0",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"tiene estatus 400 y tiene body\", function () {\r",
+							"    pm.response.to.have.status(400)\r",
+							"    pm.response.to.be.badRequest\r",
+							"    pm.response.to.has.body\r",
+							"});\r",
+							"\r",
+							"pm.test(\"el texto de error es correcto\",function(){\r",
+							"    pm.expect(pm.response.text()).to.include(\"No existe la ciudad con id \")\r",
+							"    pm.expect(pm.response.text()).to.include(\"0\")\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/API/cities/0",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"API",
+						"cities",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Postear city vacia",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"tiene estatus 400 y tiene body\", function () {\r",
+							"    pm.response.to.have.status(400)\r",
+							"    pm.response.to.be.badRequest\r",
+							"    pm.response.to.has.body\r",
+							"});\r",
+							"\r",
+							"pm.test(\"el texto de error es correcto\",function(){\r",
+							"    pm.expect(pm.response.text()).to.include(\"No es posible guardar la ciudad, faltan datos obligatorios.\")\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/API/cities",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"API",
+						"cities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar city con ID 0",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"tiene estatus 400 y tiene body\", function () {\r",
+							"    pm.response.to.have.status(400)\r",
+							"    pm.response.to.be.badRequest\r",
+							"    pm.response.to.has.body\r",
+							"});\r",
+							"\r",
+							"pm.test(\"el texto de error es correcto\",function(){\r",
+							"    pm.expect(pm.response.text()).to.include(\"No existe una ciudad con id 0\")\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/API/cities/0",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"API",
+						"cities",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postear city con producto",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"traigo producto con id 1\", function(){\r",
+							"    pm.sendRequest(\"localhost:8080/API/products/1\", function (err, response) {\r",
+							"        console.log(response.json());\r",
+							"         pm.response.to.have.status(200)\r",
+							"        pm.response.to.be.ok\r",
+							"        pm.response.to.be.json\r",
+							"        const prod1 = response.json();\r",
+							"        pm.expect\r",
+							"    });\r",
+							"})\r",
+							"\r",
+							"\r",
+							"pm.test(\"guardar categoria tiene estatus 200-ok y es json\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.response.to.have.status(200)\r",
+							"    pm.response.to.be.ok\r",
+							"    pm.response.to.be.json\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Recibo la data que puse\", function(){\r",
+							"    const cat = pm.response.json();\r",
+							"    pm.expect(cat.id).to.be.not.null;\r",
+							"    pm.expect(cat.name).to.eql(\"city-con-producto\")\r",
+							"    pm.expect(cat.country_name).to.equal(\"agreeeentina\")\r",
+							"    pm.expect(cat.products).to.be.undefined\r",
+							"}\r",
+							")\r",
+							"\r",
+							"pm.test(\"producto con Id 1 no fue modificado\", function(){\r",
+							"    pm.sendRequest(\"localhost:8080/API/products/1\", function (err, response) {\r",
+							"        console.log(response.json());\r",
+							"         pm.response.to.have.status(200)\r",
+							"        pm.response.to.be.ok\r",
+							"        pm.response.to.be.json\r",
+							"        const prod1 = response.json();\r",
+							"        pm.expect\r",
+							"    });\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"city-con-producto\",\"country_name\":\"agreeeentina\", \"products\":[{\"id\":1}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/API/cities",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"API",
+						"cities"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
