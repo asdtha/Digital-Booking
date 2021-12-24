@@ -1,0 +1,511 @@
+{
+	"info": {
+		"_postman_id": "62084f03-1507-4fc0-ab79-42b3a3718952",
+		"name": "Product API - Happy Path",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "guardar Product",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"guardar tiene estatus 200-ok y es json\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.response.to.have.status(200)\r",
+							"    pm.response.to.be.ok\r",
+							"    pm.response.to.be.json\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Recibo la data que puse (data directa)\", function(){\r",
+							"    const guardado = pm.response.json();\r",
+							"    const aGuardar = pm.collectionVariables.get(\"aGuardar\")\r",
+							"    pm.expect(guardado.id).to.be.not.null;\r",
+							"    pm.expect(guardado.name).to.eql(aGuardar.name)\r",
+							"    pm.expect(guardado.description).to.eql(aGuardar.description)\r",
+							"    pm.expect(guardado.latitude).to.eql(aGuardar.latitude)\r",
+							"    pm.expect(guardado.longitude).to.eql(aGuardar.longitude)\r",
+							"    pm.expect(guardado.calle).to.eql(aGuardar.calle)\r",
+							"    pm.expect(guardado.altura).to.eql(aGuardar.altura)\r",
+							"}\r",
+							")\r",
+							"\r",
+							"pm.test(\"Recibo la data que puse: id de city y category\",function(){\r",
+							"    const guardado = pm.response.json();\r",
+							"    const aGuardar = pm.collectionVariables.get(\"aGuardar\")\r",
+							"    pm.expect(guardado.city).to.eql(aGuardar.city.id)\r",
+							"    pm.expect(guardado.category).to.eql(aGuardar.category.id)\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Recibo la data que puse: imagenes\",function(){\r",
+							"    const guardado = pm.response.json();\r",
+							"    const aGuardar = pm.collectionVariables.get(\"aGuardar\")\r",
+							"    pm.expect(guardado.images.length).to.eql(aGuardar.images.length)\r",
+							"    for(let i = 0; i < guardado.images.length; i++ ){\r",
+							"        const imGuardada = guardado.images[i]\r",
+							"        const imAGuardar = aGuardar.images[i]\r",
+							"        pm.expect(imGuardada.id).to.not.be.null\r",
+							"        pm.expect(imGuardada.title).to.eql(imAGuardar.title)\r",
+							"        pm.expect(imGuardada.url).to.eql(imAGuardar.url)\r",
+							"    }\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Recibo la data que puse: caracteristicas\", function(){\r",
+							"    const chars = pm.response.json().characteristics\r",
+							"    pm.expect(chars.length).to.be.eql(2)\r",
+							"    pm.expect(chars[0].id).to.be.eql(1)\r",
+							"    pm.expect(chars[1].id).to.be.eql(3)\r",
+							"})\r",
+							"\r",
+							"pm.collectionVariables.set(\"id_product\", pm.response.json().id);\r",
+							"pm.collectionVariables.set(\"product\",pm.response.json())\r",
+							"console.log(\"El producto guardado tiene Id: \" + pm.collectionVariables.get(\"id_product\"))\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const aGuardar = {\r",
+							"    \"name\": \"testeo de postman happy Path\",\r",
+							"    \"description\": \"aca estamos testeando varias cosas muy muy importantes.\",\r",
+							"    \"category\": {\r",
+							"        \"id\": 1\r",
+							"    },\r",
+							"    \"city\": {\r",
+							"        \"id\": 1\r",
+							"    },\r",
+							"    \"images\": [\r",
+							"        {\r",
+							"            \"title\": \"carliton\",\r",
+							"            \"url\": \"juan Carlos\"\r",
+							"        },\r",
+							"        {\r",
+							"            \"title\": \"testeo\",\r",
+							"            \"url\": \"enrique\"\r",
+							"        }\r",
+							"    ],\r",
+							"    \"latitude\": 12,\r",
+							"    \"longitude\": 13,\r",
+							"    \"calle\": \"calle en español\",\r",
+							"    \"altura\": \"aoeu456\",\r",
+							"    \"characteristics\": [\r",
+							"        {\r",
+							"            \"id\": 1\r",
+							"        },\r",
+							"        {\r",
+							"            \"id\": 3\r",
+							"        }\r",
+							"    ]\r",
+							"}\r",
+							"pm.collectionVariables.set(\"aGuardar\", aGuardar)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"testeo de postman happy Path\",\r\n    \"description\": \"aca estamos testeando varias cosas muy muy importantes.\",\r\n    \"category\": {\r\n        \"id\": 1\r\n    },\r\n    \"city\": {\r\n        \"id\": 1\r\n    },\r\n    \"images\": [\r\n        {\r\n            \"title\": \"carliton\",\r\n            \"url\": \"juan Carlos\"\r\n        },\r\n        {\r\n            \"title\": \"testeo\",\r\n            \"url\": \"enrique\"\r\n        }\r\n    ],\r\n    \"latitude\": 12,\r\n    \"longitude\": 13,\r\n    \"calle\": \"calle en español\",\r\n    \"altura\": \"aoeu456\",\r\n    \"characteristics\": [\r\n        {\r\n            \"id\": 1\r\n        },\r\n        {\r\n            \"id\": 3\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/API/products",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"API",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscar por id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"buscarPorId tiene estatus 200-ok y es json\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.response.to.have.status(200)\r",
+							"    pm.response.to.be.ok\r",
+							"    pm.response.to.be.json\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Recibo la data que puse (data directa)\", function(){\r",
+							"    const buscado = pm.response.json();\r",
+							"    const  guardado = pm.collectionVariables.get(\"product\")\r",
+							"    pm.expect(guardado.id).to.eql(buscado.id)\r",
+							"    pm.expect(guardado.name).to.eql(buscado.name)\r",
+							"    pm.expect(guardado.description).to.eql(buscado.description)\r",
+							"    pm.expect(guardado.latitude).to.eql(buscado.latitude)\r",
+							"    pm.expect(guardado.longitude).to.eql(buscado.longitude)\r",
+							"    pm.expect(guardado.calle).to.eql(buscado.calle)\r",
+							"    pm.expect(guardado.altura).to.eql(buscado.altura)\r",
+							"}\r",
+							")\r",
+							"\r",
+							"//esto hace ruido, porque guardado es Product (city y category son Longs) y buscado es ProductDTO (city y category son clases)\r",
+							"pm.test(\"Recibo la data que puse: id de city y category\",function(){\r",
+							"    const buscado = pm.response.json();\r",
+							"    const guardado = pm.collectionVariables.get(\"product\")\r",
+							"    pm.expect(guardado.city).to.eql(buscado.city.id)    \r",
+							"    pm.expect(guardado.category).to.eql(buscado.category.id)\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Recibo la data que puse: caracteristicas\", function(){\r",
+							"    const chars = pm.response.json().characteristics\r",
+							"    pm.expect(chars.length).to.be.eql(2)\r",
+							"    pm.expect(chars[0].id).to.be.eql(1)\r",
+							"    pm.expect(chars[1].id).to.be.eql(3)\r",
+							"})\r",
+							"\r",
+							"\r",
+							"//Quedará para ver si saveProduct devuelve Product o ProductDTO\r",
+							"pm.test(\"ESTE FALLA: un producto posteado es identico a uno buscado por id\",function(){\r",
+							"        const buscado = pm.response.json();\r",
+							"    const guardado = pm.collectionVariables.get(\"product\")\r",
+							"    pm.expect(guardado.city).to.eql(buscado.city)    \r",
+							"    pm.expect(guardado.category).to.eql(buscado.category)\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Recibo la data guardada en otro test: imagenes\", function(){\r",
+							"    const imagesBuscadas = pm.response.json().images;\r",
+							"    const imagesGuardadas = pm.collectionVariables.get(\"product\").images\r",
+							"    pm.expect(imagesBuscadas.length).to.eql(imagesGuardadas.length)\r",
+							"    for(let i = 0; i < imagesBuscadas.length; i++ ){\r",
+							"        const imBuscada = imagesBuscadas[i]\r",
+							"        const imGuardada = imagesGuardadas[i]\r",
+							"        pm.expect(imGuardada.id).to.equal(imBuscada.id)\r",
+							"        pm.expect(imGuardada.title).to.eql(imBuscada.title)\r",
+							"        pm.expect(imGuardada.url).to.eql(imBuscada.url)\r",
+							"    }\r",
+							"}\r",
+							")\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/API/products/{{id_product}}",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"API",
+						"products",
+						"{{id_product}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar City",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"actualizar tiene estatus 200-ok y es json\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.response.to.have.status(200)\r",
+							"    pm.response.to.be.ok\r",
+							"    pm.response.to.be.json\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Recibo la data que puse (data directa)\", function(){\r",
+							"    const respuesta = pm.response.json();\r",
+							"    const  actualizacion = pm.collectionVariables.get(\"actualizacion\")\r",
+							"    pm.expect(respuesta.id).to.eql(actualizacion.id)\r",
+							"    pm.expect(respuesta.name).to.eql(actualizacion.name)\r",
+							"    pm.expect(respuesta.description).to.eql(actualizacion.description)\r",
+							"    pm.expect(respuesta.latitude).to.eql(actualizacion.latitude)\r",
+							"    pm.expect(respuesta.longitude).to.eql(actualizacion.longitude)\r",
+							"    pm.expect(respuesta.calle).to.eql(actualizacion.calle)\r",
+							"    pm.expect(respuesta.altura).to.eql(actualizacion.altura)\r",
+							"}\r",
+							")\r",
+							"\r",
+							"pm.test(\"Recibo la data que puse: id de city y category\",function(){\r",
+							"    const respuesta = pm.response.json();\r",
+							"    const  actualizacion = pm.collectionVariables.get(\"actualizacion\")\r",
+							"    pm.expect(respuesta.city.id).to.eql(actualizacion.city.id)    \r",
+							"    pm.expect(respuesta.category.id).to.eql(actualizacion.category.id)\r",
+							"})\r",
+							"\r",
+							"pm.test(\"estan las imagenes anteriores y ninguna nueva (actualizar no agrega mas imagenes)\", function(){\r",
+							"    const imagenesViejas = pm.collectionVariables.get(\"product\").images\r",
+							"    const imagenesRespuesta = pm.response.json().images;\r",
+							"    console.log(pm.response.json())\r",
+							"    console.log(\"viejas \" + imagenesViejas)\r",
+							"    console.log(\"respuesta\" + imagenesRespuesta)\r",
+							"    pm.expect(imagenesViejas).to.be.eql(imagenesRespuesta)\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Recibo la data que puse: caracteristicas\", function(){\r",
+							"    const chars = pm.response.json().characteristics\r",
+							"    pm.expect(chars.length).to.be.eql(2)\r",
+							"    pm.expect(chars[0].id).to.be.eql(2)\r",
+							"    pm.expect(chars[1].id).to.be.eql(4)\r",
+							"})\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"let actualizacion = {\r",
+							"    \"id\":pm.collectionVariables.get(\"id_product\"),\r",
+							"    \"name\": \"mod\",\r",
+							"    \"description\": \"modificado\",\r",
+							"    \"category\": {\r",
+							"        \"id\": 2\r",
+							"    }, \r",
+							"      \"city\": {\r",
+							"\"id\":2},\r",
+							"    \"images\": [\r",
+							"        {\r",
+							"            \"title\":\"tercer photo\",\r",
+							"            \"url\":\"esta es la tercer foto\"\r",
+							"        }\r",
+							"    ],\r",
+							"    \"latitude\": 13,\r",
+							"    \"longitude\": 14,\r",
+							"    \"calle\": \"modificado\",\r",
+							"    \"altura\": \"modificado\",\r",
+							"    \"characteristics\":[{\r",
+							"        \"id\":2\r",
+							"    },{\r",
+							"        \"id\":4\r",
+							"    }\r",
+							"    ]\r",
+							"}\r",
+							"\r",
+							"pm.collectionVariables.set(\"actualizacion\", actualizacion)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":{{id_product}},\r\n    \"name\": \"mod\",\r\n    \"description\": \"modificado\",\r\n    \"category\": {\r\n        \"id\": 2\r\n    }, \r\n      \"city\": {\r\n\"id\":2},\r\n    \"latitude\": 13,\r\n    \"longitude\": 14,\r\n    \"calle\": \"modificado\",\r\n    \"altura\": \"modificado\",\r\n    \"characteristics\":[{\r\n        \"id\":2\r\n    },{\r\n        \"id\":4\r\n    }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/API/products/update",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"API",
+						"products",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar Todos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Tiene estatus 200-ok y es json\", function () {\r",
+							"    pm.response.to.have.status(200)\r",
+							"    pm.response.to.be.ok\r",
+							"    pm.response.to.be.json\r",
+							"});\r",
+							"\r",
+							"pm.test(\"El nuevo esta en la lista\", function(){\r",
+							"    const todos = pm.response.json()\r",
+							"    let id_buscado = pm.collectionVariables.get(\"id_city\")\r",
+							"    let estaEnLista = todos.some(elem=>elem.id == id_buscado)\r",
+							"    pm.expect(estaEnLista).to.be.true\r",
+							"})\r",
+							"\r",
+							"pm.test(\"todos con id, no hay repetidos\", function(){\r",
+							"    const todos = pm.response.json();\r",
+							"    const hashId = new Set()\r",
+							"    todos.forEach(elem=>{\r",
+							"        if(hashId.has(elem.id)){\r",
+							"            pm.expect.fail(\"Esta repetido el id\" + elem.id)\r",
+							"        }else{\r",
+							"            hashId.add(elem.id)\r",
+							"        }\r",
+							"    })\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/API/products/allProducts",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"API",
+						"products",
+						"allProducts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar por ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Tiene estatus 200-ok y tiene body\", function () {\r",
+							"    pm.response.to.have.status(200)\r",
+							"    pm.response.to.be.ok\r",
+							"    pm.response.to.has.body\r",
+							"   \r",
+							"});\r",
+							"\r",
+							"pm.test(\"el texto de resuesta es el correcto\",function(){\r",
+							" pm.expect(pm.response.text()).to.include(\"Se eliminó el producto con id: \")\r",
+							"\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/API/products/{{id_product}}",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"API",
+						"products",
+						"{{id_product}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscar eliminado falla",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Tiene estatus 400-BadRequest y tiene body\", function () {\r",
+							"    pm.response.to.have.status(400)\r",
+							"    pm.response.to.be.badRequest\r",
+							"    pm.response.to.has.body\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"el texto de error es correcto\",function(){\r",
+							"    pm.expect(pm.response.text()).to.include(\"No existe un producto con id \")\r",
+							"})\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/API/products/{{id_product}}",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"API",
+						"products",
+						"{{id_product}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "aGuardar",
+			"value": ""
+		},
+		{
+			"key": "id_city",
+			"value": ""
+		},
+		{
+			"key": "id_product",
+			"value": ""
+		},
+		{
+			"key": "product",
+			"value": ""
+		},
+		{
+			"key": "actualizacion",
+			"value": ""
+		}
+	]
+}
