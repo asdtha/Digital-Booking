@@ -1,0 +1,400 @@
+{
+	"info": {
+		"_postman_id": "77d10801-836a-400a-9ceb-5aec325cab78",
+		"name": "Images API - Happy Path",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Postear un producto inicial sin imagenes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"producto se guarda tiene estatus 200-ok y es json\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.response.to.have.status(200)\r",
+							"    pm.response.to.be.ok\r",
+							"    pm.response.to.be.json\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"pm.collectionVariables.set(\"id_product\", pm.response.json().id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"testeo de postman happy Path\",\r\n    \"description\": \"aca estamos testeando varias cosas muy muy importantes.\",\r\n    \"category\": {\r\n        \"id\": 1\r\n    },\r\n    \"city\": {\r\n        \"id\": 1\r\n    },\r\n    \"latitude\": 12,\r\n    \"longitude\": 13,\r\n    \"calle\": \"calle en español\",\r\n    \"altura\": \"aoeu456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/API/products",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"API",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Guardar Imagen en dicho producto",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"guardar categoria tiene estatus 200-ok y es json\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.response.to.have.status(200)\r",
+							"    pm.response.to.be.ok\r",
+							"    pm.response.to.be.json\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Recibo la data que puse\", function(){\r",
+							"    const imagen = pm.response.json();\r",
+							"    pm.expect(imagen.id).to.be.a('number')\r",
+							"    pm.expect(imagen.title).to.eql(\"testeo\")\r",
+							"    pm.expect(imagen.url).to.equal(\"url de testeo\")\r",
+							"}\r",
+							")\r",
+							"\r",
+							"pm.collectionVariables.set(\"id_imagen\", pm.response.json().id);\r",
+							"pm.collectionVariables.set(\"imagen\",pm.response.json())\r",
+							"\r",
+							"console.log(\"id de imgen guardada: \" + pm.collectionVariables.get(\"id_imagen\"))\r",
+							"console.log(\"imagen guardada: \") \r",
+							"console.log(pm.collectionVariables.get(\"imagen\"))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"title\":\"testeo\",\"url\":\"url de testeo\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/API/images/{{id_product}}",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"API",
+						"images",
+						"{{id_product}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscarPorId",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"buscarPorId tiene estatus 200-ok y es json\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.response.to.have.status(200)\r",
+							"    pm.response.to.be.ok\r",
+							"    pm.response.to.be.json\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Recibo la data guardada en otro test\", function(){\r",
+							"    const respuesta = pm.response.json();\r",
+							"    const imagenPosteada = pm.collectionVariables.get(\"imagen\")\r",
+							"    pm.expect(respuesta).to.eql(imagenPosteada)\r",
+							"}\r",
+							")"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/API/images/{{id_imagen}}",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"API",
+						"images",
+						"{{id_imagen}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizarCategoria Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"actualizar tiene estatus 200-ok y es json\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.response.to.have.status(200)\r",
+							"    pm.response.to.be.ok\r",
+							"    pm.response.to.be.json\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Recibo la data que puse\", function(){\r",
+							"    const imagen = pm.response.json();\r",
+							"    pm.expect(imagen.id).to.equal(pm.collectionVariables.get(\"id_imagen\"))\r",
+							"    pm.expect(imagen.url).to.eql(\"lalaland\")\r",
+							"    pm.expect(imagen.title).to.equal(\"actualizada\")\r",
+							"}\r",
+							")"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\":{{id_imagen}},\"title\":\"actualizada\", \"url\":\"lalaland\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/API/images/update/{{id_product}}",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"API",
+						"images",
+						"update",
+						"{{id_product}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "imagen esta en el producto",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"la busqueda de producto tiene estatus 200-ok y es json\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.response.to.have.status(200)\r",
+							"    pm.response.to.be.ok\r",
+							"    pm.response.to.be.json\r",
+							"});\r",
+							"\r",
+							"pm.test(\"image esta en el producto\", function(){\r",
+							"    const imagenesEnProducto = pm.response.json().images\r",
+							"    \r",
+							"    pm.expect(imagenesEnProducto.some(imagen=>{imagen.id == pm.collectionVariables.get(\"id_imagen\")}))\r",
+							"})\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/API/products/{{id_product}}",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"API",
+						"products",
+						"{{id_product}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Imagen",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"Eliminar tiene estatus 200-ok y es json\", function () {\r",
+							"    pm.response.to.have.status(200)\r",
+							"    pm.response.to.be.ok\r",
+							"});\r",
+							"\r",
+							"pm.test(\"el texto de resuesta es el correcto\",function(){\r",
+							" pm.expect(pm.response.text()).to.include(\"Se eliminó la imagen con id:\")\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/API/images/{{id_imagen}}/{{id_product}}",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"API",
+						"images",
+						"{{id_imagen}}",
+						"{{id_product}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ahora el producto no tiene imagenes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"la busqueda de producto tiene estatus 200-ok y es json\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.response.to.have.status(200)\r",
+							"    pm.response.to.be.ok\r",
+							"    pm.response.to.be.json\r",
+							"});\r",
+							"\r",
+							"pm.test(\"no hay imagenes en el producto\", function(){\r",
+							"    const imagenesEnProducto = pm.response.json().images\r",
+							"    console.log(imagenesEnProducto.length)\r",
+							"    pm.expect(imagenesEnProducto.length).to.eql(0)\r",
+							"})\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/API/products/{{id_product}}",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"API",
+						"products",
+						"{{id_product}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscar eliminado falla",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Tiene estatus 400-BadRequest y tiene body\", function () {\r",
+							"    pm.response.to.have.status(400)\r",
+							"    pm.response.to.be.badRequest\r",
+							"    pm.response.to.has.body\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"el texto de error es correcto\",function(){\r",
+							"    pm.expect(pm.response.text()).to.include(\"No existe una imagen con id \")\r",
+							"})\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/API/images/{{id_imagen}}",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"API",
+						"images",
+						"{{id_imagen}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "id_product",
+			"value": ""
+		},
+		{
+			"key": "id_imagen",
+			"value": ""
+		},
+		{
+			"key": "imagen",
+			"value": ""
+		}
+	]
+}
