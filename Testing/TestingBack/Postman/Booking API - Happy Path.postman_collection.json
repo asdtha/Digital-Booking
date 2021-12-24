@@ -1,0 +1,353 @@
+{
+	"info": {
+		"_postman_id": "7db0c431-c60b-436c-a292-2d2a9ef145ee",
+		"name": "Booking API - Happy Path",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "guardar Booking",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const aGuardar = {\r",
+							"    \"product\": {\"id\":7},\r",
+							"    \"startingHour\": 0,\r",
+							"    \"checkInDate\": \"2021-11-26\",\r",
+							"    \"checkOutDate\": \"2021-11-28\",\r",
+							"    \"user\":{\"id\":2}\r",
+							"}\r",
+							"pm.collectionVariables.set(\"booking\", aGuardar)"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"guardar tiene estatus 201-Created y es json\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.response.to.have.status(201)\r",
+							"    pm.response.to.be.json\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Recibo la data que puse (data directa)\", function(){\r",
+							"    const guardado = pm.response.json();\r",
+							"    const aGuardar = pm.collectionVariables.get(\"booking\")\r",
+							"    pm.expect(guardado.id).to.be.not.null;\r",
+							"    pm.expect(guardado.product).to.eql(aGuardar.product.id)\r",
+							"    pm.expect(guardado.startingHour).to.eql(aGuardar.startingHour)\r",
+							"    pm.expect(guardado.checkInDate).to.eql(aGuardar.checkInDate)\r",
+							"    pm.expect(guardado.checkOutDate).to.eql(aGuardar.checkOutDate)\r",
+							"    pm.expect(guardado.user.id).to.eql(aGuardar.user.id)\r",
+							"    }\r",
+							")\r",
+							"\r",
+							"pm.collectionVariables.set(\"id_booking\", pm.response.json().id);\r",
+							"pm.collectionVariables.set(\"booking\",pm.response.json())\r",
+							"console.log(\"El booking guardado tiene Id: \" + pm.collectionVariables.get(\"id_booking\"))\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"product\": {\"id\":7},\r\n    \"startingHour\": 0,\r\n    \"checkInDate\": \"2021-11-26\",\r\n    \"checkOutDate\": \"2021-11-28\",\r\n    \"user\":{\"id\":2}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/API/bookings",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"API",
+						"bookings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscar por id booking",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"buscarPorIdBooking tiene estatus 200-ok y es json\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.response.to.have.status(200)\r",
+							"    pm.response.to.be.ok\r",
+							"    pm.response.to.be.json\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Recibo la data que puse del booking\", function(){\r",
+							"    const buscado = pm.response.json();\r",
+							"    const guardado = pm.collectionVariables.get(\"booking\")\r",
+							"    pm.expect(buscado.id).to.be.not.null;\r",
+							"    pm.expect(buscado.product).to.eql(guardado.product)\r",
+							"    pm.expect(buscado.startingHour).to.eql(guardado.startingHour)\r",
+							"    pm.expect(buscado.checkInDate).to.eql(guardado.checkInDate)\r",
+							"    pm.expect(buscado.checkOutDate).to.eql(guardado.checkOutDate)\r",
+							"    pm.expect(buscado.user.id).to.eql(guardado.user.id)\r",
+							"}\r",
+							")\r",
+							"\r",
+							"pm.test(\"Recibo la data que puse:comparando el id de user\",function(){\r",
+							"    const buscado = pm.response.json();\r",
+							"    const guardado = pm.collectionVariables.get(\"booking\")\r",
+							"    pm.expect(guardado.user.id).to.eql(buscado.user.id)    \r",
+							"})\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/API/bookings/{{id_booking}}",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"API",
+						"bookings",
+						"{{id_booking}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscar por id product",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"buscarPorIdProducto tiene estatus 200-ok y es json\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.response.to.have.status(200)\r",
+							"    pm.response.to.be.ok\r",
+							"    pm.response.to.be.json\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Recibo la data correcta por el id del producto\", function(){\r",
+							"    const listaProductos = pm.response.json();\r",
+							"    const idProducto = pm.collectionVariables.get(\"product_id\")\r",
+							"    listaProductos.forEach(guardado=>{\r",
+							"        pm.expect(guardado.id).to.be.not.null;\r",
+							"        pm.expect(\"\"+guardado.product+\"\").to.equal(idProducto)\r",
+							"    })\r",
+							"    \r",
+							"}\r",
+							")\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/API/bookings/byProduct/{{product_id}}",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"API",
+						"bookings",
+						"byProduct",
+						"{{product_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscar por id user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"buscarPorIdBooking tiene estatus 200-ok y es json\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.response.to.have.status(200)\r",
+							"    pm.response.to.be.ok\r",
+							"    pm.response.to.be.json\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Recibo la data correcta por el id de usuario\", function(){\r",
+							"    const listaProductos = pm.response.json();\r",
+							"    const idUser = pm.collectionVariables.get(\"user_id\")\r",
+							"    listaProductos.forEach(guardado=>{\r",
+							"        pm.expect(guardado.id).to.be.not.null;\r",
+							"        pm.expect(\"\"+guardado.user.id+\"\").to.equal(idUser)\r",
+							"    })\r",
+							"    \r",
+							"}\r",
+							")"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/API/bookings/byUser/{{user_id}}",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"API",
+						"bookings",
+						"byUser",
+						"{{user_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar por id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Tiene estatus 200-ok y tiene body\", function () {\r",
+							"    pm.response.to.have.status(200)\r",
+							"    pm.response.to.be.ok\r",
+							"    pm.response.to.has.body\r",
+							"   \r",
+							"});\r",
+							"\r",
+							"pm.test(\"el texto de resuesta es el correcto\",function(){\r",
+							" pm.expect(pm.response.text()).to.include(\"Se eliminó la reserva con id: \")\r",
+							"\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/API/bookings/{{id_booking}}",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"API",
+						"bookings",
+						"{{id_booking}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id_booking",
+			"value": ""
+		},
+		{
+			"key": "booking",
+			"value": ""
+		},
+		{
+			"key": "product_id",
+			"value": ""
+		},
+		{
+			"key": "user_id",
+			"value": ""
+		},
+		{
+			"key": "token",
+			"value": ""
+		}
+	]
+}
