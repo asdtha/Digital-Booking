@@ -3,10 +3,10 @@ We implemented filters to search by type of accommodation, city and/or date rang
 Additionally we used some AWS services; we dockerized both the front-end, back-end, and ran the containers in an ec2 instance, stored the data in an RDS instance and the images in an S3 bucket.
 
 We worked in an Agile environment under Scrum methodology and some of the technologies, languages, libraries and frameworks we worked with were:
--Front-end: HTML, CSS, JavaScript, React Library
--Back-end: Java, Spring Framework, Spring Boot, Spring Boot Security, Spring Boot Mail, Spring Boot JPA, Spring Doc, Hibernate ORM, jwt, log4j, maven
--Database: Mysql
--Testing: JUnit, Jest, Postman, React Testing Library and manual Testing.
--Infrastructure: Terraform, Docker, AWS (resource provider: Ec2, RDS mysql, S3, Route 53)
--Version control system: Git
--Remote hosting service for Git repository: Gitlab
+- Front-end: HTML, CSS, JavaScript, React Library
+- Back-end: Java, Spring Framework, Spring Boot, Spring Boot Security, Spring Boot Mail, Spring Boot JPA, Spring Doc, Hibernate ORM, jwt, log4j, maven
+- Database: Mysql
+- Testing: JUnit, Jest, Postman, React Testing Library and manual Testing.
+- Infrastructure: Terraform, Docker, AWS (resource provider: Ec2, RDS mysql, S3, Route 53)
+- Version control system: Git
+- Remote hosting service for Git repository: Gitlab
