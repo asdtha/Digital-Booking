@@ -8,5 +8,5 @@ We worked in an Agile environment under Scrum methodology and some of the techno
 - Database: Mysql
 - Testing: JUnit, Jest, Postman, React Testing Library and manual Testing.
 - Infrastructure: Terraform, Docker, AWS (resource provider: Ec2, RDS mysql, S3, Route 53)
-- Version control system: Git
-- Remote hosting service for Git repository: Gitlab
+
+
